@@ -1,0 +1,42 @@
+yarn init -y
+yarn add -D typescript
+yarn add express
+yarn add @type/express -D
+yarn add @types/node -D
+
+yarn tsc --init
+yarn add ts-node-dev -D
+
+yarn add typeorm
+arquivo ormconfig.json adicionar 
+não esquecer colocar script typeorm
+
+
+---------mudar no tsconfig--------------------------------
+		"strict": true,
+		"noImplicitAny": true,
+		"strictPropertyInitialization": false
+
+		não esqueça de inicializar datasource no server.txt
+----------------------------------------------------------        
+
+#destruie
+yarn typeorm migration:revert 
+
+#executar
+yarn typeorm migration:run 
+
+#criar migration
+yarn typeorm migration:create -n CreateProducts
+
+
+########################## CELEBRATE:ATENÇÃO
+NÃO ESQUECA DE DEPOIS DE CARREGAR RODA IMPORTAR ERRORS E ADICIONAR APOS ROTA O USER
+
+import { errors } from "celebrate";
+routes.use(errors());
+##############################################
+
+VOLTAR VIDEO 17 MIN ATÉ 35
+https://www.youtube.com/watch?v=0mYq5LrQN1s
+
